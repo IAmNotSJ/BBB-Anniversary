@@ -1,0 +1,241 @@
+[gd_scene load_steps=25 format=3 uid="uid://coq1vpspwrw63"]
+
+[ext_resource type="Script" path="res://menus/main/main_menu.gd" id="1_q88bu"]
+[ext_resource type="PackedScene" uid="uid://i5qncavij7f5" path="res://useful/parallax_tile.tscn" id="2_3g75t"]
+[ext_resource type="Texture2D" uid="uid://cu6u28j0rwel4" path="res://menus/main/assets/shell.png" id="3_6s5sv"]
+[ext_resource type="Texture2D" uid="uid://1keyq18h6qat" path="res://menus/main/assets/title.png" id="4_b5egf"]
+[ext_resource type="Texture2D" uid="uid://cao6klfkstypv" path="res://menus/main/assets/bg.png" id="5_e2yv8"]
+[ext_resource type="Texture2D" uid="uid://23rsmp0xn1lm" path="res://menus/main/assets/buttons/settings.png" id="7_g5d5i"]
+[ext_resource type="Texture2D" uid="uid://b34a0kmv7eugx" path="res://menus/main/assets/buttons/settings-select.png" id="8_dfa4t"]
+[ext_resource type="VideoStream" path="res://menus/main/ahahah.ogv" id="11_ygtk5"]
+[ext_resource type="Texture2D" uid="uid://bebj26ta8pck6" path="res://menus/main/assets/buttons/hyena.png" id="12_j4bbj"]
+[ext_resource type="PackedScene" uid="uid://dnd1doq4yac7c" path="res://menus/main/settings/settings.tscn" id="12_po7vl"]
+[ext_resource type="Texture2D" uid="uid://bqk0mr8llghen" path="res://menus/main/assets/buttons/hyena-select.png" id="13_3rsv1"]
+[ext_resource type="AudioStream" uid="uid://05q0ybss2q8x" path="res://overworld/music/Title Screen.ogg" id="13_bdykl"]
+[ext_resource type="PackedScene" uid="uid://dmk0pvnookhar" path="res://menus/main/games/games_menu.tscn" id="13_gp170"]
+[ext_resource type="FontFile" uid="uid://civq6m1ieh0f7" path="res://fonts/CookieRun Bold.ttf" id="13_ivpwh"]
+[ext_resource type="Texture2D" uid="uid://bhgabmxek0jvw" path="res://menus/main/assets/buttons/karl.png" id="14_w5gh4"]
+[ext_resource type="Texture2D" uid="uid://dnaf0su4shk35" path="res://menus/main/assets/buttons/karl-select.png" id="15_o8c0m"]
+[ext_resource type="Texture2D" uid="uid://balfq1y8wfcya" path="res://menus/main/assets/buttons/battle.png" id="16_752lg"]
+[ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="16_sponl"]
+[ext_resource type="Texture2D" uid="uid://key8s8mmfbyf" path="res://menus/main/assets/buttons/battle-select.png" id="17_dtdq4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqmiy"]
+bg_color = Color(0.195313, 0.195313, 0.195313, 0.356863)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmexp"]
+bg_color = Color(0, 0, 0, 0.717647)
+
+[sub_resource type="Animation" id="Animation_6mkq2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main/Title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 254)]
+}
+
+[sub_resource type="Animation" id="Animation_x1ui1"]
+resource_name = "bop"
+length = 0.750004
+loop_mode = 1
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main/Title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.208333, 0.291667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(640, 243), Vector2(640, 251), Vector2(640, 255), Vector2(640, 256), Vector2(640, 254)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_go4rk"]
+_data = {
+"RESET": SubResource("Animation_6mkq2"),
+"bop": SubResource("Animation_x1ui1")
+}
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_q88bu")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+texture = ExtResource("5_e2yv8")
+centered = false
+
+[node name="Parallax" parent="." instance=ExtResource("2_3g75t")]
+offset_left = -146.419
+offset_top = 662.0
+offset_right = 1539.6
+offset_bottom = 731.0
+texture = ExtResource("3_6s5sv")
+speed = Vector2(-50, 0)
+crossingPoint = -276.0
+
+[node name="Parallax2" parent="." instance=ExtResource("2_3g75t")]
+offset_left = -291.267
+offset_top = -10.0
+offset_right = 1394.75
+offset_bottom = 59.0
+texture = ExtResource("3_6s5sv")
+flip_v = true
+speed = Vector2(50, 0)
+crossingPoint = -110.0
+
+[node name="Main" type="Node2D" parent="."]
+
+[node name="Title" type="Sprite2D" parent="Main"]
+position = Vector2(640, 254)
+scale = Vector2(2.93751, 2.93751)
+texture = ExtResource("4_b5egf")
+
+[node name="debug" type="Button" parent="Main"]
+unique_name_in_owner = true
+visible = false
+offset_left = 1040.0
+offset_top = 75.0
+offset_right = 1274.0
+offset_bottom = 125.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("16_sponl")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/focus = SubResource("StyleBoxFlat_rqmiy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rqmiy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rqmiy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tmexp")
+text = "DEBUG"
+
+[node name="version" type="Label" parent="Main"]
+unique_name_in_owner = true
+offset_left = 8.0
+offset_top = 688.0
+offset_right = 533.0
+offset_bottom = 720.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("13_ivpwh")
+theme_override_font_sizes/font_size = 23
+text = "3.0.0 BETA"
+
+[node name="GridContainer" type="HBoxContainer" parent="."]
+offset_left = 29.0
+offset_top = 456.0
+offset_right = 1243.0
+offset_bottom = 656.0
+theme_override_constants/separation = 65
+alignment = 1
+
+[node name="Hyena" type="TextureButton" parent="GridContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture_normal = ExtResource("12_j4bbj")
+texture_hover = ExtResource("13_3rsv1")
+stretch_mode = 0
+
+[node name="Karl" type="TextureButton" parent="GridContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture_normal = ExtResource("14_w5gh4")
+texture_hover = ExtResource("15_o8c0m")
+stretch_mode = 0
+
+[node name="Battle" type="TextureButton" parent="GridContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture_normal = ExtResource("16_752lg")
+texture_hover = ExtResource("17_dtdq4")
+stretch_mode = 0
+
+[node name="Settings" type="TextureButton" parent="GridContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture_normal = ExtResource("7_g5d5i")
+texture_hover = ExtResource("8_dfa4t")
+stretch_mode = 0
+
+[node name="Settings" parent="." instance=ExtResource("12_po7vl")]
+visible = false
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 5.0
+offset_bottom = 2.0
+
+[node name="Games" parent="." instance=ExtResource("13_gp170")]
+visible = false
+
+[node name="Password" type="ColorRect" parent="."]
+visible = false
+offset_left = 233.0
+offset_top = 49.0
+offset_right = 1061.0
+offset_bottom = 653.0
+color = Color(0.45056, 0.723208, 0.957907, 1)
+
+[node name="Label" type="Label" parent="Password"]
+layout_mode = 0
+offset_right = 828.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("13_ivpwh")
+theme_override_font_sizes/font_size = 56
+text = "gimme da password BITCH!"
+
+[node name="password_line" type="LineEdit" parent="Password"]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 283.0
+offset_right = 724.0
+offset_bottom = 359.0
+
+[node name="fade" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -103.0
+offset_top = -49.0
+offset_right = 1347.0
+offset_bottom = 768.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_go4rk")
+}
+autoplay = "bop"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_bdykl")
+autoplay = true
+bus = &"Music"
+
+[node name="no" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+stream = ExtResource("11_ygtk5")
+volume_db = 24.0
+bus = &"SFX"
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Main/debug" to="." method="_on_debug_pressed"]
+[connection signal="pressed" from="GridContainer/Hyena" to="." method="_on_hyena_pressed"]
+[connection signal="pressed" from="GridContainer/Karl" to="." method="_on_karl_pressed"]
+[connection signal="pressed" from="GridContainer/Battle" to="." method="_on_battle_pressed"]
+[connection signal="pressed" from="GridContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="text_submitted" from="Password/password_line" to="." method="_on_password_line_text_submitted"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

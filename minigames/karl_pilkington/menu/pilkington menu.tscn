@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwwmi7b5w1ukc"]
+
+[ext_resource type="Script" path="res://minigames/karl_pilkington/menu/pilkington menu.gd" id="1_46fup"]
+[ext_resource type="AudioStream" uid="uid://dhfuxi7r52isl" path="res://minigames/karl_pilkington/music/Water Park.ogg" id="2_h0qxu"]
+[ext_resource type="PackedScene" uid="uid://i5qncavij7f5" path="res://useful/parallax_tile.tscn" id="3_r4rav"]
+[ext_resource type="Texture2D" uid="uid://7utgmsk8x4dx" path="res://minigames/karl_pilkington/menu/title.png" id="4_wqviv"]
+[ext_resource type="PackedScene" uid="uid://c5ydarh33j3hw" path="res://minigames/karl_pilkington/menu/wing.tscn" id="5_kueff"]
+[ext_resource type="Texture2D" uid="uid://cbhvgm1n4voy5" path="res://minigames/karl_pilkington/menu/subtitle.png" id="6_ict1t"]
+[ext_resource type="FontFile" uid="uid://civq6m1ieh0f7" path="res://fonts/CookieRun Bold.ttf" id="7_1510l"]
+
+[node name="PilkingtonMenu" type="Node2D"]
+script = ExtResource("1_46fup")
+
+[node name="TextureRect" parent="." instance=ExtResource("3_r4rav")]
+offset_left = -103.421
+offset_top = -103.421
+offset_right = 1330.56
+offset_bottom = 751.579
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 454.0
+offset_top = 419.0
+offset_right = 837.0
+offset_bottom = 580.0
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="PLAY BUTTON" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 86
+text = "PLAY
+"
+
+[node name="DEBUG BUTTON" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "DEBUG"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_h0qxu")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+
+[node name="Wing" parent="." instance=ExtResource("5_kueff")]
+position = Vector2(36, 92)
+scale = Vector2(2, 2)
+
+[node name="Wing2" parent="." instance=ExtResource("5_kueff")]
+position = Vector2(1242, 92)
+scale = Vector2(2, 2)
+flip_h = true
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(640, 95)
+scale = Vector2(2, 2)
+texture = ExtResource("4_wqviv")
+
+[node name="Subtitle" type="Sprite2D" parent="."]
+position = Vector2(640, 227)
+scale = Vector2(2, 2)
+texture = ExtResource("6_ict1t")
+
+[node name="Debug Warning" type="RichTextLabel" parent="."]
+offset_top = 696.0
+offset_right = 1280.0
+offset_bottom = 722.0
+theme_override_fonts/normal_font = ExtResource("7_1510l")
+bbcode_enabled = true
+text = "[center]DEBUG OPTIONS ENABLED — WINS WILL NOT COUNT[/center]"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PLAY BUTTON" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/DEBUG BUTTON" to="." method="_on_debug_button_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

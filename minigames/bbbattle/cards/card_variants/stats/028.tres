@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CardStats" load_steps=2 format=3 uid="uid://cab86n3uf3qul"]
+
+[ext_resource type="Script" path="res://minigames/bbbattle/cards/card_stats.gd" id="1_cth8c"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_cth8c")
+card_name = "Status Message"
+censored_name = ""
+card_series = "Wibr"
+card_number = "028"
+base_attack = 4.0
+base_defense = 3.0
+can_get_bonuses = true
+ability_name = "Other Priorities"
+ability_description = "If this card wins, put it back into its user's deck, and give its attack/defense to another card for the game. (This will render it with 0 attack and 0 defense)"
+one_use_ability = false
+should_remove = false
+hide_stats = false
+is_human = false
+has_hands = false

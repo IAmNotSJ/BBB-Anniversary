@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://boai058oocco0"]
+
+[ext_resource type="Script" path="res://minigames/karl_pilkington/karl pilkington.gd" id="1_g1iqv"]
+[ext_resource type="Texture2D" uid="uid://dsocb3ls4r5ua" path="res://minigames/karl_pilkington/assets/bg/bg.png" id="2_csjmh"]
+[ext_resource type="PackedScene" uid="uid://b0yfruw8dklnv" path="res://minigames/karl_pilkington/gameplay/upgrade_handler/upgrade_handler.tscn" id="3_7bwsv"]
+[ext_resource type="PackedScene" uid="uid://41v41iabaatk" path="res://minigames/karl_pilkington/assets/ui/UI.tscn" id="4_gqpxn"]
+[ext_resource type="PackedScene" uid="uid://dbstbsi2a81my" path="res://minigames/karl_pilkington/gameplay/boss_handler/boss_handler.tscn" id="5_qnkm5"]
+[ext_resource type="PackedScene" uid="uid://bhnj1k6abgat5" path="res://minigames/karl_pilkington/assets/ui/crosshait/crosshair.tscn" id="6_2apvk"]
+[ext_resource type="Script" path="res://minigames/karl_pilkington/music/musicPlayer.gd" id="6_mgbxm"]
+
+[sub_resource type="Animation" id="Animation_xfb7e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ikdfd"]
+resource_name = "flash"
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r6est"]
+_data = {
+"RESET": SubResource("Animation_xfb7e"),
+"flash": SubResource("Animation_ikdfd")
+}
+
+[node name="KarlPilkington" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_g1iqv")
+
+[node name="BossHandler" parent="." instance=ExtResource("5_qnkm5")]
+
+[node name="UpgradeHandler" parent="." instance=ExtResource("3_7bwsv")]
+
+[node name="BG" type="TextureRect" parent="."]
+z_index = -2
+offset_left = -150.0
+offset_top = -114.0
+offset_right = -135.0
+offset_bottom = -105.0
+scale = Vector2(102, 102)
+texture = ExtResource("2_csjmh")
+stretch_mode = 1
+
+[node name="UI" parent="." instance=ExtResource("4_gqpxn")]
+z_index = 2
+
+[node name="Crosshair" parent="." instance=ExtResource("6_2apvk")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EffectsPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r6est")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+script = ExtResource("6_mgbxm")
+
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]

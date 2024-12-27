@@ -1,0 +1,779 @@
+[gd_scene load_steps=52 format=3 uid="uid://dniq8ycjwht5m"]
+
+[ext_resource type="Script" path="res://minigames/bbbattle/menu/menu.gd" id="1_fnnwu"]
+[ext_resource type="PackedScene" uid="uid://buki7x0i4et4q" path="res://minigames/bbbattle/quiz/quiz.tscn" id="2_8g1s8"]
+[ext_resource type="Texture2D" uid="uid://bkifl60rireni" path="res://minigames/bbbattle/menu/assets/paper.png" id="2_41pih"]
+[ext_resource type="PackedScene" uid="uid://b1oyvx0nlu05y" path="res://minigames/bbbattle/menu/camera/camera_2d.tscn" id="2_kb2py"]
+[ext_resource type="Texture2D" uid="uid://coti1hsi3ak8b" path="res://minigames/bbbattle/menu/assets/bg.png" id="2_ujqw1"]
+[ext_resource type="Texture2D" uid="uid://cce8mf3vm3ipd" path="res://minigames/bbbattle/menu/assets/Initial/main-drawings.png" id="5_4a1pf"]
+[ext_resource type="PackedScene" uid="uid://ba5tb1wjkc03y" path="res://minigames/bbbattle/menu/profile_builder/profile_builder.tscn" id="5_4mcm6"]
+[ext_resource type="Texture2D" uid="uid://dsxiihb5mewlh" path="res://minigames/bbbattle/menu/assets/Initial/host.png" id="5_klkot"]
+[ext_resource type="Texture2D" uid="uid://p3i60odrp1hg" path="res://minigames/bbbattle/menu/assets/Initial/join.png" id="6_fqf0y"]
+[ext_resource type="PackedScene" uid="uid://b04wj00c3p8yq" path="res://minigames/bbbattle/menu/deck_builder/deck_builder.tscn" id="6_r2hmy"]
+[ext_resource type="Texture2D" uid="uid://qra1u05p717" path="res://minigames/bbbattle/menu/assets/Initial/deck.png" id="7_n5de5"]
+[ext_resource type="Texture2D" uid="uid://cv88cvllqygdc" path="res://minigames/bbbattle/menu/assets/Initial/profile.png" id="8_15ou1"]
+[ext_resource type="Texture2D" uid="uid://b1csnghb6oa3w" path="res://minigames/bbbattle/menu/assets/Initial/quiz.png" id="9_8at78"]
+[ext_resource type="FontFile" uid="uid://by5ru6ytpunev" path="res://fonts/pencilpete-font.regular.ttf" id="10_3vu6p"]
+[ext_resource type="Texture2D" uid="uid://q4bj7j1lqy2h" path="res://minigames/bbbattle/menu/assets/Initial/advanced.png" id="10_ivtdl"]
+[ext_resource type="Texture2D" uid="uid://cqwgk25h6wg3b" path="res://minigames/bbbattle/menu/assets/Initial/pointer.png" id="13_xb4mq"]
+[ext_resource type="Texture2D" uid="uid://ocj8cmpvfkv0" path="res://minigames/bbbattle/menu/assets/check.png" id="13_xeiw8"]
+[ext_resource type="Texture2D" uid="uid://b4scisrq4ui87" path="res://minigames/bbbattle/menu/assets/uncheck.png" id="14_p0sp5"]
+[ext_resource type="Texture2D" uid="uid://4l2isi3gxwsk" path="res://minigames/bbbattle/menu/assets/box.png" id="15_l3adr"]
+[ext_resource type="PackedScene" uid="uid://cko05u2gcfxbu" path="res://minigames/bbbattle/menu/match_rules/match_rules.tscn" id="17_ycgn0"]
+[ext_resource type="AudioStream" uid="uid://ctvsq0j0oxyor" path="res://minigames/bbbattle/music/ambience.ogg" id="20_g32h4"]
+[ext_resource type="AudioStream" uid="uid://c70wguh3dljuf" path="res://minigames/bbbattle/sound_effects/paper_trans.mp3" id="21_u5jma"]
+[ext_resource type="PackedScene" uid="uid://cc1md6wtks64r" path="res://overworld/light/day_night_cycle/day_night_cycle.tscn" id="22_i5do4"]
+[ext_resource type="PackedScene" uid="uid://bfdmgwylj72h6" path="res://useful/time_light/time_light.tscn" id="23_5hnem"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vwotu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kjfqx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jo8pn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kyvii"]
+texture = ExtResource("15_l3adr")
+modulate_color = Color(0.84375, 0.84375, 0.84375, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eq00q"]
+texture = ExtResource("15_l3adr")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3cqon"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b33yr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_35d6a"]
+
+[sub_resource type="Animation" id="Animation_hf67y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cxaj8"]
+resource_name = "advanced-initial"
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833334, 0.166667, 0.25, 0.333334, 0.416667, 0.541667, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(994, 142), Vector2(998, 145), Vector2(1004, 151), Vector2(666, 74), Vector2(57, 17), Vector2(13, 4), Vector2(5, 3), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1ajqq"]
+resource_name = "deck-initial"
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833334, 0.208334, 0.291667, 0.333334, 0.416667, 0.541667, 0.625001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(1173, -785), Vector2(1175, -787), Vector2(1184, -795), Vector2(997, -600), Vector2(99, -98), Vector2(43, -50), Vector2(2, -5), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nkc82"]
+resource_name = "host-initial"
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833334, 0.166667, 0.333334, 0.416667, 0.541667, 0.625001, 0.708334, 0.791667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(657, 1137), Vector2(661, 1142), Vector2(662, 1144), Vector2(660, 1142), Vector2(479, 666), Vector2(106, 134), Vector2(29, 41), Vector2(2, 2), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rs1fx"]
+resource_name = "host-rules"
+length = 0.583338
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833334, 0.166667, 0.291667, 0.375, 0.5, 0.583334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(657, 1137), Vector2(625, 1145), Vector2(618, 1151), Vector2(1202, 1039), Vector2(1874, 935), Vector2(1884, 927), Vector2(1888, 925)]
+}
+
+[sub_resource type="Animation" id="Animation_reaix"]
+resource_name = "initial-advanced"
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0416667, 0.125, 0.25, 0.333334, 0.416667, 0.541667, 0.625, 0.708333, 0.833334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(-16, 0), Vector2(-19, 0), Vector2(296, 11), Vector2(816, 76), Vector2(968, 127), Vector2(984, 132), Vector2(991, 141), Vector2(993, 141), Vector2(994, 142)]
+}
+
+[sub_resource type="Animation" id="Animation_clb84"]
+resource_name = "initial-deck"
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833334, 0.208333, 0.291667, 0.375, 0.458334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(-11, 11), Vector2(-17, 17), Vector2(588, -365), Vector2(1161, -763), Vector2(1167, -770), Vector2(1173, -784)]
+}
+
+[sub_resource type="Animation" id="Animation_58eg5"]
+resource_name = "initial-host"
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.416667, 0.5, 0.583333, 0.666666, 0.791667, 0.916667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(-5, -5), Vector2(-23, -27), Vector2(183, 200), Vector2(333, 821), Vector2(650, 1129), Vector2(652, 1132), Vector2(656, 1136), Vector2(657, 1137)]
+}
+
+[sub_resource type="Animation" id="Animation_1g0oo"]
+resource_name = "initial-join"
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833334, 0.208334, 0.416667, 0.5, 0.583334, 0.625001, 0.666667, 0.750001, 0.875001, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(5, -5), Vector2(12, -12), Vector2(14, -14), Vector2(-79, 74), Vector2(-406, 443), Vector2(-835, 1003), Vector2(-925, 1087), Vector2(-931, 1093), Vector2(-935, 1099), Vector2(-936, 1100)]
+}
+
+[sub_resource type="Animation" id="Animation_1iklk"]
+resource_name = "initial-profile"
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833334, 0.208334, 0.333334, 0.458334, 0.541667, 0.625001, 0.708334, 0.833334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(6, 6), Vector2(10, 10), Vector2(-380, -377), Vector2(-660, -721), Vector2(-738, -901), Vector2(-734, -889), Vector2(-730, -885), Vector2(-731, -886)]
+}
+
+[sub_resource type="Animation" id="Animation_gwige"]
+resource_name = "initial-quiz"
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833334, 0.208334, 0.375, 0.458333, 0.541667, 0.625, 0.708334, 0.833334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(7, 0), Vector2(9, 0), Vector2(7, 0), Vector2(-217, 8), Vector2(-753, 16), Vector2(-1856, 16), Vector2(-1858, 16), Vector2(-1859, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_315i8"]
+resource_name = "join-initial"
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833334, 0.166667, 0.333334, 0.416667, 0.5, 0.583334, 0.625001, 0.708334, 0.833334, 0.958334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-936, 1100), Vector2(-939, 1103), Vector2(-942, 1106), Vector2(-940, 1103), Vector2(-745, 927), Vector2(-654, 682), Vector2(-324, 363), Vector2(-82, 72), Vector2(-4, 1), Vector2(2, -1), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0lklf"]
+resource_name = "profile-initial"
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833334, 0.208334, 0.375, 0.458334, 0.541667, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-731, -886), Vector2(-743, -898), Vector2(-746, -901), Vector2(-532, -705), Vector2(-128, -287), Vector2(8, 16), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nst5m"]
+resource_name = "quiz-initial"
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.208334, 0.375, 0.458333, 0.5, 0.583334, 0.666667, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-1859, 16), Vector2(-1865, 16), Vector2(-1871, 21), Vector2(-1527, 21), Vector2(-935, 13), Vector2(-7, 13), Vector2(-7, 5), Vector2(-3, 3), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2hl85"]
+resource_name = "rules-host"
+length = 0.583338
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833334, 0.125, 0.25, 0.333334, 0.416667, 0.583333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(1888, 925), Vector2(1904, 909), Vector2(1915, 901), Vector2(1431, 1059), Vector2(851, 1107), Vector2(738, 1120), Vector2(657, 1137)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ncw2"]
+_data = {
+"RESET": SubResource("Animation_hf67y"),
+"advanced-initial": SubResource("Animation_cxaj8"),
+"deck-initial": SubResource("Animation_1ajqq"),
+"host-initial": SubResource("Animation_nkc82"),
+"host-rules": SubResource("Animation_rs1fx"),
+"initial-advanced": SubResource("Animation_reaix"),
+"initial-deck": SubResource("Animation_clb84"),
+"initial-host": SubResource("Animation_58eg5"),
+"initial-join": SubResource("Animation_1g0oo"),
+"initial-profile": SubResource("Animation_1iklk"),
+"initial-quiz": SubResource("Animation_gwige"),
+"join-initial": SubResource("Animation_315i8"),
+"profile-initial": SubResource("Animation_0lklf"),
+"quiz-initial": SubResource("Animation_nst5m"),
+"rules-host": SubResource("Animation_2hl85")
+}
+
+[sub_resource type="Animation" id="Animation_cca6p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jumtb"]
+resource_name = "bounce"
+length = 0.583338
+loop_mode = 1
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.25, 0.291667, 0.416667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(7, 0), Vector2(-9, 0), Vector2(-7, 0), Vector2(-4, 0), Vector2(-1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_myb5i"]
+_data = {
+"RESET": SubResource("Animation_cca6p"),
+"bounce": SubResource("Animation_jumtb")
+}
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_fnnwu")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -5
+offset_left = -2051.0
+offset_top = -1288.0
+offset_right = 4175.0
+offset_bottom = 3367.0
+texture = ExtResource("2_ujqw1")
+stretch_mode = 1
+
+[node name="camera" parent="." instance=ExtResource("2_kb2py")]
+
+[node name="time_light" parent="camera" instance=ExtResource("23_5hnem")]
+visible = false
+position = Vector2(635, 292)
+scale = Vector2(30.9531, 30.9531)
+energy = 0.6
+starting_hour = 19
+ending_hour = 5
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -7
+offset_left = -3448.0
+offset_top = -1939.0
+offset_right = 4143.0
+offset_bottom = 2331.0
+color = Color(1, 0.767278, 0.985936, 1)
+
+[node name="ALL" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 8.0
+offset_right = 1278.0
+offset_bottom = 728.0
+
+[node name="Initial" type="Node2D" parent="ALL"]
+position = Vector2(398, 10)
+rotation = -0.00872665
+
+[node name="Paper" type="Sprite2D" parent="ALL/Initial"]
+position = Vector2(259, 351)
+texture = ExtResource("2_41pih")
+
+[node name="Host" type="TextureButton" parent="ALL/Initial"]
+unique_name_in_owner = true
+offset_left = 152.283
+offset_top = 312.007
+offset_right = 397.283
+offset_bottom = 367.007
+focus_neighbor_top = NodePath("../Advanced")
+focus_neighbor_bottom = NodePath("../Join")
+texture_normal = ExtResource("5_klkot")
+
+[node name="Join" type="TextureButton" parent="ALL/Initial"]
+unique_name_in_owner = true
+offset_left = 163.755
+offset_top = 372.581
+offset_right = 408.755
+offset_bottom = 421.581
+focus_neighbor_top = NodePath("../Host")
+focus_neighbor_bottom = NodePath("../Deck")
+texture_normal = ExtResource("6_fqf0y")
+
+[node name="Deck" type="TextureButton" parent="ALL/Initial"]
+unique_name_in_owner = true
+offset_left = 161.18
+offset_top = 438.404
+offset_right = 388.18
+offset_bottom = 478.404
+focus_neighbor_top = NodePath("../Join")
+focus_neighbor_bottom = NodePath("../Profile")
+texture_normal = ExtResource("7_n5de5")
+
+[node name="Profile" type="TextureButton" parent="ALL/Initial"]
+unique_name_in_owner = true
+offset_left = 172.709
+offset_top = 492.526
+offset_right = 399.709
+offset_bottom = 532.526
+focus_neighbor_top = NodePath("../Deck")
+focus_neighbor_bottom = NodePath("../Quiz")
+texture_normal = ExtResource("8_15ou1")
+
+[node name="Quiz" type="TextureButton" parent="ALL/Initial"]
+unique_name_in_owner = true
+offset_left = 171.237
+offset_top = 546.515
+offset_right = 386.237
+offset_bottom = 586.515
+focus_neighbor_top = NodePath("../Profile")
+focus_neighbor_bottom = NodePath("../Advanced")
+texture_normal = ExtResource("9_8at78")
+
+[node name="Advanced" type="TextureButton" parent="ALL/Initial"]
+unique_name_in_owner = true
+offset_left = 160.775
+offset_top = 599.426
+offset_right = 404.775
+offset_bottom = 641.426
+focus_neighbor_top = NodePath("../Quiz")
+focus_neighbor_bottom = NodePath("../Host")
+texture_normal = ExtResource("10_ivtdl")
+
+[node name="Main-drawings" type="Sprite2D" parent="ALL/Initial"]
+position = Vector2(254.041, 340.23)
+scale = Vector2(0.875, 0.875)
+texture = ExtResource("5_4a1pf")
+
+[node name="Advanced" type="Node2D" parent="ALL"]
+position = Vector2(1216, 148)
+rotation = 0.010472
+skew = -0.0174533
+
+[node name="Sprite2D" type="Sprite2D" parent="ALL/Advanced"]
+texture = ExtResource("2_41pih")
+centered = false
+
+[node name="UPNP" type="CheckBox" parent="ALL/Advanced"]
+unique_name_in_owner = true
+offset_left = 122.227
+offset_top = 111.723
+offset_right = 349.227
+offset_bottom = 142.723
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3vu6p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vwotu")
+theme_override_icons/checked = ExtResource("13_xeiw8")
+theme_override_icons/unchecked = ExtResource("14_p0sp5")
+button_pressed = true
+text = "Use Universal Plug In Play"
+flat = true
+
+[node name="DayNight" type="CheckBox" parent="ALL/Advanced"]
+unique_name_in_owner = true
+offset_left = 118.982
+offset_top = 146.758
+offset_right = 345.982
+offset_bottom = 177.758
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3vu6p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vwotu")
+theme_override_icons/checked = ExtResource("13_xeiw8")
+theme_override_icons/unchecked = ExtResource("14_p0sp5")
+button_pressed = true
+text = "Follow Day/Night Cycle"
+flat = true
+
+[node name="Food" type="CheckBox" parent="ALL/Advanced"]
+unique_name_in_owner = true
+offset_left = 116.716
+offset_top = 184.782
+offset_right = 343.716
+offset_bottom = 215.782
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3vu6p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vwotu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vwotu")
+theme_override_icons/checked = ExtResource("13_xeiw8")
+theme_override_icons/unchecked = ExtResource("14_p0sp5")
+button_pressed = true
+text = "Censor Food"
+flat = true
+
+[node name="Host" type="Node2D" parent="ALL"]
+position = Vector2(1183, 1137)
+rotation = 0.0349066
+skew = -0.0383972
+
+[node name="paper" type="Sprite2D" parent="ALL/Host"]
+position = Vector2(256, 336)
+texture = ExtResource("2_41pih")
+
+[node name="Create Room" type="Button" parent="ALL/Host/paper"]
+unique_name_in_owner = true
+offset_left = -127.926
+offset_top = -48.468
+offset_right = 155.074
+offset_bottom = 10.532
+theme_override_colors/font_hover_pressed_color = Color(0.298039, 0.337255, 0.368627, 1)
+theme_override_colors/font_hover_color = Color(0.384766, 0.448785, 0.5, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3vu6p")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_jo8pn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kyvii")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_eq00q")
+text = "Create Room"
+
+[node name="Match Rules" type="Button" parent="ALL/Host/paper"]
+unique_name_in_owner = true
+offset_left = -132.695
+offset_top = -115.302
+offset_right = 150.305
+offset_bottom = -56.3019
+theme_override_colors/font_hover_pressed_color = Color(0.298039, 0.337255, 0.368627, 1)
+theme_override_colors/font_hover_color = Color(0.384766, 0.448785, 0.5, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3vu6p")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_jo8pn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kyvii")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_kyvii")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kyvii")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_eq00q")
+text = "Set Match Rules"
+
+[node name="Label" type="Label" parent="ALL/Host/paper"]
+offset_left = -162.211
+offset_top = -259.273
+offset_right = 230.789
+offset_bottom = -154.273
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3vu6p")
+theme_override_font_sizes/font_size = 82
+text = "HOST GAME"
+
+[node name="Explanation" type="Label" parent="ALL/Host/paper"]
+offset_left = -173.214
+offset_top = 26.1131
+offset_right = 227.786
+offset_bottom = 325.113
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("10_3vu6p")
+theme_override_font_sizes/font_size = 28
+text = "How to Host:
+Press the \"Create Room\" button, and give the code on the top right of your screen to the person who will join you"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Match Rules" parent="ALL" instance=ExtResource("17_ycgn0")]
+position = Vector2(2155, 947)
+
+[node name="Join" type="Node2D" parent="ALL"]
+position = Vector2(-530, 1117)
+rotation = 0.0523599
+
+[node name="paper" type="Sprite2D" parent="ALL/Join"]
+texture = ExtResource("2_41pih")
+centered = false
+
+[node name="title" type="Label" parent="ALL/Join/paper"]
+offset_left = 159.018
+offset_top = 110.83
+offset_right = 450.018
+offset_bottom = 193.829
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3vu6p")
+theme_override_font_sizes/font_size = 64
+text = "JOIN GAME"
+
+[node name="Join Room" type="Button" parent="ALL/Join"]
+unique_name_in_owner = true
+offset_left = 159.129
+offset_top = 378.762
+offset_right = 442.129
+offset_bottom = 437.762
+theme_override_colors/font_hover_pressed_color = Color(0.29834, 0.338142, 0.367188, 1)
+theme_override_colors/font_hover_color = Color(0.384314, 0.447059, 0.501961, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3vu6p")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_3cqon")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kyvii")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kjfqx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_eq00q")
+text = "Join Room"
+
+[node name="address_bar" type="LineEdit" parent="ALL/Join"]
+unique_name_in_owner = true
+offset_left = 161.682
+offset_top = 311.966
+offset_right = 444.682
+offset_bottom = 370.966
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.570313, 0.570313, 0.570313, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_3vu6p")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b33yr")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_b33yr")
+theme_override_styles/normal = SubResource("StyleBoxTexture_eq00q")
+placeholder_text = "Enter Room Address"
+alignment = 1
+
+[node name="Profile" parent="ALL" instance=ExtResource("5_4mcm6")]
+position = Vector2(-695, -898)
+
+[node name="Quiz" parent="ALL" instance=ExtResource("2_8g1s8")]
+layout_mode = 0
+offset_left = -1492.0
+offset_top = -1.0
+offset_right = -212.0
+offset_bottom = 719.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_35d6a")
+vertical_scroll_mode = 3
+
+[node name="deck_builder" parent="ALL" instance=ExtResource("6_r2hmy")]
+position = Vector2(1172, -780)
+metadata/_edit_group_ = true
+
+[node name="animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8ncw2")
+}
+autoplay = "RESET"
+
+[node name="Pointer" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(528, 355)
+texture = ExtResource("13_xb4mq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pointer"]
+libraries = {
+"": SubResource("AnimationLibrary_myb5i")
+}
+autoplay = "bounce"
+
+[node name="ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_g32h4")
+autoplay = true
+bus = &"Music"
+
+[node name="paper_flip" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_u5jma")
+volume_db = -13.117
+bus = &"SFX"
+
+[node name="DayNightCycle" parent="." instance=ExtResource("22_i5do4")]
+visible = false
+
+[connection signal="mouse_entered" from="ALL/Initial/Host" to="." method="_on_host_mouse_entered"]
+[connection signal="pressed" from="ALL/Initial/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="ALL/Initial/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="ALL/Initial/Deck" to="." method="_on_deck_pressed"]
+[connection signal="pressed" from="ALL/Initial/Profile" to="." method="_on_profile_pressed"]
+[connection signal="pressed" from="ALL/Initial/Quiz" to="." method="_on_quiz_pressed"]
+[connection signal="pressed" from="ALL/Initial/Advanced" to="." method="_on_advanced_pressed"]
+[connection signal="toggled" from="ALL/Advanced/UPNP" to="." method="_on_upnp_toggled"]
+[connection signal="toggled" from="ALL/Advanced/DayNight" to="." method="_on_day_night_toggled"]
+[connection signal="toggled" from="ALL/Advanced/Food" to="." method="_on_food_toggled"]
+[connection signal="pressed" from="ALL/Host/paper/Create Room" to="." method="_on_create_room_pressed"]
+[connection signal="pressed" from="ALL/Host/paper/Match Rules" to="." method="_on_match_rules_pressed"]
+[connection signal="pressed" from="ALL/Join/Join Room" to="." method="_on_join_room_pressed"]
+[connection signal="finished" from="ambience" to="." method="_on_ambience_finished"]

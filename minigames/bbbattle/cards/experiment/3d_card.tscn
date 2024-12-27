@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj5vri4pyykkn"]
+
+[ext_resource type="Texture2D" uid="uid://bq2t5po1etak6" path="res://minigames/bbbattle/cards/assets/card_base.png" id="1_pjk7u"]
+[ext_resource type="Texture2D" uid="uid://bcj3rohj0g7nk" path="res://minigames/bbbattle/cards/assets/ability_holder.png" id="2_yqebr"]
+[ext_resource type="FontFile" uid="uid://civq6m1ieh0f7" path="res://fonts/CookieRun Bold.ttf" id="3_j521m"]
+
+[node name="3D Card" type="Node3D"]
+
+[node name="Base" type="Sprite3D" parent="."]
+texture = ExtResource("1_pjk7u")
+
+[node name="AbilityHolder" type="Sprite3D" parent="Base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004, -1.587, 0)
+render_priority = 1
+texture = ExtResource("2_yqebr")
+
+[node name="Info" type="Node3D" parent="Base"]
+
+[node name="Series" type="Label3D" parent="Base/Info"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87889, 2.62704, -0.00026989)
+render_priority = 2
+outline_render_priority = 1
+text = "Card Series"
+font = ExtResource("3_j521m")
+font_size = 42
+horizontal_alignment = 0
+
+[node name="Number" type="Label3D" parent="Base/Info"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81096, 2.62704, -0.000464916)
+render_priority = 2
+outline_render_priority = 1
+text = "Card Number"
+font = ExtResource("3_j521m")
+font_size = 42
+horizontal_alignment = 2

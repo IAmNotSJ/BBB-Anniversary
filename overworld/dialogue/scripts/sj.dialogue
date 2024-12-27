@@ -1,0 +1,22 @@
+~ start
+
+if global.characterInteractions["SJ"] == 0:
+	sj: heyo
+	wibr: ..
+	sj: What?
+	wibr: What's with the pizza hut
+	sj: The what?
+	wibr: behind you.
+	sj: Wibr I really don't know what you're talking about
+	wibr: THE BUILDING BEHIND YOU
+	sj: Ohh you mean my house!
+	sj: I got locked out.
+if global.characterInteractions["SJ"] == 1:
+	sj: I bet, in mayhaps a year or so,
+	sj: I may be able to unlock my house
+	sj: And see what crazy things await inside
+if global.characterInteractions["SJ"] > 1:
+	sj: We should bring back the Breaking Wheel.
+
+do global.add_interaction("SJ")
+=> END

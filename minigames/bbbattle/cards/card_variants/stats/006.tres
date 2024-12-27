@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardStats" load_steps=2 format=3 uid="uid://c2flwlilvbiq0"]
+
+[ext_resource type="Script" path="res://minigames/bbbattle/cards/card_stats.gd" id="1_3c141"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_3c141")
+card_name = "Dapper"
+card_series = "Dapper"
+card_number = "006"
+base_attack = 3.0
+base_defense = 3.0
+can_get_bonuses = true
+ability_name = "Catalyst"
+ability_description = "Choose a card to remove from your deck instead of this one if it were to win. (Does not activate any winning-related abilities)"
+one_use_ability = true
+should_remove = false
+hide_stats = false
+is_human = true
+has_hands = true

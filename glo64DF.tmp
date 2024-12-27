@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://deoxvvtb84mic"]
+
+[ext_resource type="Script" path="res://global.gd" id="1_cpsov"]
+[ext_resource type="PackedScene" uid="uid://ds3w1xv8267a1" path="res://useful shit/mouse/mouse.tscn" id="2_o51yy"]
+
+[node name="Global" type="Node2D"]
+script = ExtResource("1_cpsov")
+
+[node name="Mouse" parent="." instance=ExtResource("2_o51yy")]

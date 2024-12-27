@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c72a5wbvct5yl"
+path="res://.godot/imported/Exciting Collection.ogg-07af7028fa400c41d6f995eb057d2483.oggvorbisstr"
+
+[deps]
+
+source_file="res://minigames/bbbattle/music/Exciting Collection.ogg"
+dest_files=["res://.godot/imported/Exciting Collection.ogg-07af7028fa400c41d6f995eb057d2483.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

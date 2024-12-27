@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CardStats" load_steps=2 format=3 uid="uid://4y0gsic0q144"]
+
+[ext_resource type="Script" path="res://minigames/bbbattle/cards/card_stats.gd" id="1_7wlj5"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_7wlj5")
+card_name = "System Member"
+censored_name = ""
+card_series = "Cherry"
+card_number = "063"
+base_attack = 1.0
+base_defense = 2.0
+can_get_bonuses = false
+ability_name = "Fronting"
+ability_description = "This card has a 25% chance to be replaced by a random card from the Nova Bloom series every turn."
+one_use_ability = false
+should_remove = true
+hide_stats = false
+is_human = true
+has_hands = true

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardStats" load_steps=2 format=3 uid="uid://wgw38ala74nx"]
+
+[ext_resource type="Script" path="res://minigames/bbbattle/cards/card_stats.gd" id="1_4q8ti"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_4q8ti")
+card_name = "Dile"
+card_series = "Dile"
+card_number = "009"
+base_attack = 1.0
+base_defense = 3.0
+can_get_bonuses = true
+ability_name = "Neuralyzer"
+ability_description = "Upon use, permanently remove any stat bonuses currently applied to your opponent's deck."
+one_use_ability = true
+should_remove = true
+hide_stats = false
+is_human = true
+has_hands = true

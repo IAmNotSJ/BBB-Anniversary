@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CardStats" load_steps=2 format=3 uid="uid://mspbmnxjmeuo"]
+
+[ext_resource type="Script" path="res://minigames/bbbattle/cards/card_stats.gd" id="1_t6e2v"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_t6e2v")
+card_name = "Minecraft Server"
+censored_name = ""
+card_series = "BBB"
+card_number = "014"
+base_attack = 4.0
+base_defense = 3.0
+can_get_bonuses = true
+ability_name = ""
+ability_description = ""
+one_use_ability = false
+should_remove = true
+hide_stats = false
+is_human = false
+has_hands = false

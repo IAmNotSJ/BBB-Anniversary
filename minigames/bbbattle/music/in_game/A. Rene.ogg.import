@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://31a14yhuombe"
+path="res://.godot/imported/A. Rene.ogg-98adafeeeb207b95860d007bb4d4590a.oggvorbisstr"
+
+[deps]
+
+source_file="res://minigames/bbbattle/music/in_game/A. Rene.ogg"
+dest_files=["res://.godot/imported/A. Rene.ogg-98adafeeeb207b95860d007bb4d4590a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardStats" load_steps=2 format=3 uid="uid://cw25lgrf67kt6"]
+
+[ext_resource type="Script" path="res://minigames/bbbattle/cards/card_stats.gd" id="1_u7mdj"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_u7mdj")
+card_name = "Reckless Driver"
+card_series = "Wibr"
+card_number = "023"
+base_attack = 6.0
+base_defense = 1.0
+can_get_bonuses = true
+ability_name = ""
+one_use_ability = false
+ability_description = ""
+should_remove = true
+hide_stats = false

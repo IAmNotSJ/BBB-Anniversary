@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardStats" load_steps=2 format=3 uid="uid://ogm2xlmfcgj0"]
+
+[ext_resource type="Script" path="res://minigames/bbbattle/cards/card_stats.gd" id="1_6aa4e"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_6aa4e")
+card_name = "Battle Cats"
+card_series = "Luna"
+card_number = "119"
+base_attack = 0.0
+base_defense = 0.0
+can_get_bonuses = true
+ability_name = "Units"
+ability_description = "This card changes to one of 5 random cats every turn, each with different stats."
+one_use_ability = false
+should_remove = true
+hide_stats = false
+is_human = false
+has_hands = false
