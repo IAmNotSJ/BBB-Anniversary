@@ -448,8 +448,8 @@ libraries = {
 "": SubResource("AnimationLibrary_4s5sq")
 }
 
-[connection signal="item_selected" from="paper/dropdown" to="." method="on_dropdown_item_selected"]
 [connection signal="item_selected" from="paper/dropdown" to="." method="_on_dropdown_item_selected"]
+[connection signal="item_selected" from="paper/dropdown" to="." method="on_dropdown_item_selected"]
 [connection signal="text_changed" from="paper/character_name_edit" to="." method="_on_line_edit_text_changed"]
 [connection signal="pressed" from="paper/profile_color/color_picker_button" to="." method="_on_color_picker_button_pressed"]
 [connection signal="color_changed" from="paper/profile_color/ColorPicker" to="." method="_on_color_picker_color_changed"]

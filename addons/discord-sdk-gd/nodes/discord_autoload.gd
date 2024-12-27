@@ -19,7 +19,7 @@ var presets:Dictionary = {
 }
 
 func _ready() -> void:
-	DiscordSDK.app_id = 1187909876467367946
+	DiscordSDK.app_id = 1322293101464911892
 	run_preset("Menu")
 
 func run_preset(preset:String):
